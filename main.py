@@ -1,26 +1,21 @@
-# Variable global para seguir el botón seleccionado
+import tkinter as tk
+import os
+import sys
+import subprocess
+
+# Variable global para seguir el boton seleccionado
 seleccionado = None
 
 def seleccionar(boton):
     global seleccionado
 
-    # Si ya hay un botón seleccionado, vuelve a su color original
+    # Si ya hay un boton seleccionado, vuelve a su color original
     if seleccionado is not None:
         seleccionado.config(bg="white", fg="black")
 
-    # Actualiza el color del botón seleccionado
+    # Actualiza el boton seleccionado
     boton.config(bg="#6899d4", fg="white")
-    
-    # Actualiza el botón seleccionado
     seleccionado = boton
-
-def act_interfaz():
-    """
-    Actualiza frm_progs para que cada boton de unidad muestre
-    lo que le corresponde.
-    """
-    for widget in frm_progs.winfo_children():
-        widget.destroy()
 
 def ejecutar(programa):
     ruta = os.path.join(os.path.dirname(__file__), programa)
@@ -29,11 +24,6 @@ def ejecutar(programa):
         subprocess.Popen(["start", "cmd", "/k", sys.executable, ruta], shell=True)
     else: # macOS, Linux
         subprocess.Popen(["x-terminal-emulator", "-e", f"{sys.executable} {ruta}"])
-
-import tkinter as tk
-import os
-import sys
-import subprocess
 
 ventana = tk.Tk()
 ventana.geometry("450x400")
@@ -64,6 +54,6 @@ btn_prog1.pack(pady=5)
 lbl_prog1.pack()
 btn_prog2.pack(pady=5)
 lbl_prog2.pack()
-seleccionar(btn_unid1) # Controla que Unidad 1 este siendo seleccionado por defecto
+seleccionar(btn_unid1) # Asegura que Unidad 1 este siendo seleccionado por defecto
 
 ventana.mainloop()
