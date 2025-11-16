@@ -35,7 +35,8 @@ paned.pack(fill=tk.BOTH, expand=True)
 frm_unid = tk.Frame(paned, width=150, height=200, relief=tk.SUNKEN, bg="#dddddd")
 frm_progs = tk.Frame(paned, width=150, height=200, relief=tk.SUNKEN)
 
-btn_unid1 = tk.Button(frm_unid, text="Unidad 1", width=10, bg="#84b0e4", fg="white", command=lambda: seleccionar(btn_unid1))
+btn_unid1 = tk.Button(frm_unid, text="Unidad 1", width=10, bg="#84b0e4", fg="white", 
+                      command=lambda: seleccionar(btn_unid1))
 btn_unid2 = tk.Button(frm_unid, text="Unidad 2", width=10, command=lambda: seleccionar(btn_unid2))
 btn_unid3 = tk.Button(frm_unid, text="Unidad 3", width=10, command=lambda: seleccionar(btn_unid3))
 
