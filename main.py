@@ -68,6 +68,7 @@ def ejecutar(programa: str) -> None:
     else: # macOS, Linux
         subprocess.Popen(["x-terminal-emulator", "-e", f"{sys.executable} {ruta}"])
 
+""" -- Log-in -- """
 def login():
     toplvl = tk.Toplevel()
     toplvl.geometry("300x150")
@@ -134,6 +135,8 @@ lbl_u1_prog4 = tk.Label(frm_progs, text="Obtener el sueldo de un empleado que ga
 btn_u1_prog5 = tk.Button(frm_progs, text="Programa 5", width=15, command=lambda: ejecutar("unidad1/programa5.py"))
 msg_u1_prog5 = tk.Message(frm_progs, text="Obtener el total a pagar." \
 " Si todos los productos tienen el mismo precio, al subtotal se le debe agregar el IVA (16%)", width=300)
+
+""" -- Empaquetar widgets -- """
 
 paned.add(frm_unid)
 paned.add(frm_progs)
